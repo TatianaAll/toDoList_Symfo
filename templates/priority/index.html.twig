@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les priorités{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+        <a href="{{ path('priority_create') }}">Créer une nouvelle priorité</a>
+    </div>
+
+    <h2>Liste des priorités existantes</h2>
+    <div class="example-wrapper">
+        <ul>
+            {% for priority in priorities %}
+                <li>{{ priority.name }}, {{ priority.level }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
