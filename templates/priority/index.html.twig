@@ -4,17 +4,17 @@
 
 {% block body %}
 
-    <div class="example-wrapper">
-        <a href="{{ path('priority_create') }}">Créer une nouvelle priorité</a>
-    </div>
+    <section class="container">
 
-    <h2>Liste des priorités existantes</h2>
-    <div class="example-wrapper">
-        <ul>
-            {% for priority in priorities %}
-                <li>{{ priority.name }}, {{ priority.level }}</li>
-            {% endfor %}
-        </ul>
-    </div>
+        <a href="{{ path('priority_create') }}" class="btn btn-primary">Créer une nouvelle priorité</a>
 
+        <h2 class="text-body-secondary h2">Liste des priorités existantes</h2>
+        <div class="example-wrapper">
+            <ul>
+                {% for priority in priorities %}
+                    <li>{{ priority.name }}, {{ priority.level }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
 {% endblock %}
