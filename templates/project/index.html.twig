@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des projets{% endblock %}
+
+{% block body %}
+
+    <section class="container">
+
+        <a href="{{ path('project_create') }}" class="btn btn-primary">Créer un nouveau projet</a>
+
+        <h2 class="text-body-secondary h2">Liste des projets existants</h2>
+        <div class="example-wrapper">
+{#            <ul>#}
+{#                {% for project in projects %}#}
+{#                    <li>{{ project.name }}, {{ project.level }}</li>#}
+{#                {% endfor %}#}
+{#            </ul>#}
+{#        </div>#}
+
+    </section>
+
+{% endblock %}
