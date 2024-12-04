@@ -22,9 +22,12 @@ class ProjectType extends AbstractType
                 'label' => 'Nom du projet',
                 'attr' => ['class' => 'form-control'],
                 'label_attr' => ['class' => 'form-label'],
-
             ])
-            ->add('description', type: TextAreaType::class)
+            ->add('description', type: TextAreaType::class, options : [
+                'label' => 'Description du projet',
+                'attr' => ['class' => 'form-control'],
+                'label_attr' => ['class' => 'form-label'],
+            ])
             ->add('tags', type: EntityType::class, options: [
                 'class'=>Tag::class,
                 'choice_label' => 'name',
@@ -33,7 +36,11 @@ class ProjectType extends AbstractType
                 'label'=>'Tags',
                 'label_attr' => ['class' => 'form-label'],
             ])
-            ->add('image')
+            ->add('image', type: TextType::class, options : [
+                'label' => 'Lien URL de l\'image',
+                'attr' => ['class' => 'form-control'],
+                'label_attr' => ['class' => 'form-label']
+            ])
             ->add('Enregistrer', SubmitType::class, options : [
                 'attr' => ['class' => 'btn btn-success mt-3'],
             ])

@@ -13,8 +13,14 @@ class StatusType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('Enregistrer', SubmitType::class)
+            ->add('name', null, [
+                'attr' => ['class' => 'form-control'],
+                'label_attr' => ['class' => 'form-label'],
+                'label' => 'Titre'
+            ])
+            ->add(child: 'Enregistrer', type: SubmitType::class, options: [
+                'attr' => ['class' => 'btn btn-success mt-3']
+            ])
         ;
     }
 
