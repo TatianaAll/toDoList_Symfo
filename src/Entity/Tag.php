@@ -36,4 +36,8 @@ class Tag
 
         return $this;
     }
+    public function getProjects() : Collection
+    {
+        return $this->projects;
+    }
 }

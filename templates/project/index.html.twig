@@ -10,12 +10,43 @@
 
         <h2 class="text-body-secondary h2">Liste des projets existants</h2>
         <div class="example-wrapper">
-{#            <ul>#}
-{#                {% for project in projects %}#}
-{#                    <li>{{ project.name }}, {{ project.level }}</li>#}
-{#                {% endfor %}#}
-{#            </ul>#}
-{#        </div>#}
+
+            <ul class="list-group">
+                {% for project in projects %}
+                    {% if project.id is divisible by(2) %}
+
+                        <li class="list-group-item bg-primary-subtle">{{ project.name }}
+                            <ul class="list-group-item bg-primary-subtle">
+                                <li class="list-group-item bg-primary-subtle">Description : {{ project.description }}</li>
+                                <li class="list-group-item bg-primary-subtle">Tag(s) associé(s) :
+                                    {% for tag in project.tags %}
+
+                                        <ul class="list-group bg-primary-subtle">
+                                            <li class="list-group bg-primary-subtle">{{ tag.name }}</li>
+                                        </ul>
+
+                                    {% endfor %}
+                                </li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="list-group-item bg-warning-subtle">{{ project.name }}
+                            <ul class="list-group-item bg-warning-subtle">
+                                <li class="list-group-item bg-warning-subtle">Description : {{ project.description }}</li>
+                                <li class="list-group-item bg-warning-subtle">Tag(s) associé(s)
+                                    {% for tag in project.tags %}
+                                    <ul class="list-group bg-warning-subtle">
+                                        <li class="list-group bg-warning-subtle">{{ tag.name }}</li>
+                                    </ul>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        </div>
 
     </section>
 

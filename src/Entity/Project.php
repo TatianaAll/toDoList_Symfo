@@ -84,4 +84,16 @@ class Project
 
         return $this;
     }
+
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function setTags(Collection $tags): static
+    {
+        $this->tags = $tags;
+
+        return $this;
+    }
 }

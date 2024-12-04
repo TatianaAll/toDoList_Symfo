@@ -4,11 +4,13 @@
 
 {% block body %}
 
-    <a href="{{ path('tag_create') }}">Créer un nouveau tag</a>
+    <section class="container">
+        <a href="{{ path('tag_create') }}" class="btn btn-primary">Créer un nouveau tag</a>
 
-<div class="example-wrapper">
-    {% for tag in tags %}
-        <h2>{{ tag.name }}</h2>
-    {% endfor %}
-</div>
+        <div class="example-wrapper">
+            {% for tag in tags %}
+                <h2>{{ tag.name }}</h2>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}

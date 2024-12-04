@@ -4,14 +4,16 @@
 
 {% block body %}
 
-    <div>
-        <a href="{{ path('status_create') }}">Créer un nouveau statut</a>
-    </div>
+    <section class="container">
+        <div>
+            <a href="{{ path('status_create') }}" class="btn btn-primary">Créer un nouveau statut</a>
+        </div>
 
-<div class="example-wrapper">
-    <h1>Liste des statuts existants</h1>
-    {% for status_item in status %}
-        <h2>{{ status_item.name }}</h2>
-    {% endfor %}
-</div>
+        <div class="example-wrapper">
+            <h1>Liste des statuts existants</h1>
+            {% for status_item in status %}
+                <h2>{{ status_item.name }}</h2>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}
