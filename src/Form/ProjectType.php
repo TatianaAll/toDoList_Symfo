@@ -33,7 +33,7 @@ class ProjectType extends AbstractType
                 'label'=>'Tags',
                 'label_attr' => ['class' => 'form-label'],
             ])
-            ->add('image', type: FileType::class)
+            ->add('image')
             ->add('Enregistrer', SubmitType::class, options : [
                 'attr' => ['class' => 'btn btn-success mt-3'],
             ])

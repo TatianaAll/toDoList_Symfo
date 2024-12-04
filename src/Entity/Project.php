@@ -6,6 +6,7 @@ use App\Repository\ProjectRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use PhpParser\Comment;
 
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
@@ -31,6 +32,9 @@ class Project
     #[ORM\ManyToMany(targetEntity: Tag::class)]
     #[ORM\JoinTable(name:'project_tag')]
     private Collection $tags;
+
+    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Task::class)]
+    private Collection $tasks;
 
     public function getId(): ?int
     {
